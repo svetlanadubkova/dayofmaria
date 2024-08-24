@@ -3,33 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wedding day coordinator timeline - maria & arya's special day</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>underage & overserved - maria & arya's wedding timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Playfair Display', serif;
             line-height: 1.6;
-            background-color: #000;
+            background-color: #1a1a1a;
             color: #fff;
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            padding-top: 80px;
+        }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(26, 26, 26, 0.9);
+            color: #fff;
+            padding: 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sticky-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .logo {
+            display: inline-block;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .logo-underage {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+        .logo-overserved {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        .quote {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .quote:hover {
+            transform: scale(1.05);
+            color: #fff;
         }
         h1, h2 {
             text-align: center;
             text-transform: lowercase;
             font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
         }
         .navigation {
             position: sticky;
-            top: 0;
-            background-color: #000;
+            top: 60px;
+            background-color: rgba(26, 26, 26, 0.9);
             padding: 10px 0;
-            z-index: 1000;
+            z-index: 999;
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
@@ -37,12 +92,17 @@
         .nav-button {
             margin: 0 10px;
             padding: 10px 20px;
-            background-color: #333;
+            background-color: transparent;
             color: #fff;
-            border: none;
-            border-radius: 5px;
+            border: 1px solid #fff;
             cursor: pointer;
             text-transform: lowercase;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #fff;
+            color: #1a1a1a;
         }
         .timeline-section {
             margin-bottom: 40px;
@@ -51,10 +111,10 @@
         }
         .timeline-section:nth-child(odd) {
             background-color: #fff;
-            color: #000;
+            color: #1a1a1a;
         }
         .timeline-section:nth-child(even) {
-            background-color: #000;
+            background-color: #1a1a1a;
             color: #fff;
         }
         #ceremony {
@@ -118,7 +178,7 @@
             padding: 20px;
             border-radius: 10px;
             background-color: #fff;
-            color: #000;
+            color: #1a1a1a;
         }
         .vendor-card, .question {
             margin-bottom: 20px;
@@ -134,6 +194,21 @@
             opacity: 0.5;
             text-decoration: line-through;
         }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+        .image-container {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
         @media screen and (max-width: 600px) {
             .navigation {
                 flex-wrap: wrap;
@@ -141,10 +216,31 @@
             .nav-button {
                 margin: 5px;
             }
+            .sticky-header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .quote {
+                font-size: 1rem;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="sticky-header">
+        <div class="sticky-header-content">
+            <div class="logo">
+                <span class="logo-underage">underage</span><span class="logo-overserved">&overserved</span>
+            </div>
+            <div>
+                elevated event staffing in nyc // bartending | staffing | photography | all-inclusive event production
+            </div>
+        </div>
+    </div>
     <div class="container">
         <h1>maria & arya's wedding - coordinator timeline</h1>
         <div class="navigation">
@@ -152,7 +248,7 @@
             <button class="nav-button" onclick="scrollToSection('ceremony')">ceremony</button>
             <button class="nav-button" onclick="scrollToSection('reception')">reception</button>
             <button class="nav-button" onclick="scrollToSection('vendors')">vendors</button>
-            <button class="nav-button" onclick="scrollToSection('questions')">questions</button>
+            <button class="nav-button" onclick="scrollToSection('seating-chart')">seating chart</button>
         </div>
         <div id="timeline">
             <!-- Timeline sections will be dynamically inserted here -->
@@ -161,286 +257,338 @@
             <h2>vendors</h2>
             <!-- Vendor cards will be dynamically inserted here -->
         </div>
-        <div class="questions-section" id="questions">
-            <h2>coordinator questions</h2>
-            <!-- Question cards will be dynamically inserted here -->
+        <div class="seating-chart-section" id="seating-chart">
+            <h2>seating chart</h2>
+            <div class="image-container">
+                <img src="tablecards.png" alt="Seating Chart">
+            </div>
         </div>
     </div>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- [Previous head content remains unchanged] -->
-</head>
-<body>
-    <!-- [Previous body content remains unchanged] -->
+    <div class="footer">
+        inquiries: 💌 info@underageandoverserved.com
+    </div>
 
     <script>
         const timelineData = [
             {
+                time: '7:00 AM',
+                event: 'maria wakes up',
+                location: 'the luxury collection manhattan midtown',
+                section: 'getting-ready'
+            },
+            {
                 time: '8:00 AM',
-                event: 'maria wakes up and starts to get ready',
-                location: 'the luxury collection manhattan midtown',
-                notes: 'do a nice facemask, eye patches, and plenty of water! remember to bring hydration packs!',
-                section: 'getting-ready'
-            },
-            {
-                time: '8:30 AM',
-                event: 'girls arrive: cassidy, alexia, kenya, valeria, alejandra, gabriella, allison, jimena',
-                location: 'the luxury collection manhattan midtown',
-                section: 'getting-ready'
-            },
-            {
-                time: '9:00 AM',
-                event: 'hair team arrives',
+                event: 'hair arrives - stevie',
                 location: 'the luxury collection manhattan midtown',
                 vendor: 'stevie ray huffman',
                 phone: '3233467206',
-                notes: 'confirm time of arrival and confirm he arrives on time',
+                notes: 'grab vendor and bring them up',
                 section: 'getting-ready'
             },
             {
                 time: '9:00 AM',
-                event: 'both moms arrive at the hotel',
+                event: 'flowers deliver - maria\'s stepdad dante',
+                location: 'moxy',
+                section: 'getting-ready'
+            },
+            {
+                time: '9:00 AM',
+                event: 'makeup arrives',
                 location: 'the luxury collection manhattan midtown',
-                notes: 'dresses and shoes for both need to be in the room! anything else they might need they need to pack it the day before! we can drop it off the day before as well.',
+                vendor: 'elena nheme',
+                phone: '7543024071',
+                notes: 'grab vendor and bring them up',
                 section: 'getting-ready'
             },
             {
                 time: '9:30 AM',
-                event: 'lana arrives - day-of coordinator',
+                event: 'coordinator arrives - lana',
                 location: 'the luxury collection manhattan midtown',
+                vendor: 'lana',
                 phone: '3477388058',
-                notes: 'begin ordering breakfast! get confetti/fans etc from bride and whatever else might need to be delivered to park',
+                notes: 'come to maria\'s room to connect - room number 3901. call alexia to bring you up. we will give you a room key.',
                 section: 'getting-ready',
                 important: true
             },
             {
                 time: '10:00 AM',
-                event: 'makeup team arrives',
+                event: 'breakfast for maria & the girls',
                 location: 'the luxury collection manhattan midtown',
-                vendor: 'elena nheme',
-                phone: '7543024071',
-                notes: 'confirm time of arrival and confirm she arrives on time',
+                vendor: 'allison (bride\'s friend)',
+                phone: '4072573542',
                 section: 'getting-ready'
             },
             {
                 time: '10:00 AM',
-                event: 'make up and hair team arrives for moms',
+                event: 'breakfast for arya',
                 location: 'the luxury collection manhattan midtown',
-                notes: 'confirm time of arrival and confirm they arrive on time',
                 section: 'getting-ready'
             },
             {
-                time: '10:00 AM',
-                event: 'fruit and light breakfast for the girls',
-                location: 'the luxury collection manhattan midtown',
-                notes: 'set up delivery of breakfast to the room. fruit, specifically watermelon, strawberries, blueberries, and more(the fruit is for all the girls). sunny side-up eggs or eggbites(bacon ones), avocado and toast. orange juice and coffee :)',
-                section: 'getting-ready'
-            },
-            {
-                time: '10:00 AM',
-                event: 'breakfast for arya and the boys',
-                location: 'the luxury collection manhattan midtown',
-                notes: 'set up delivery of breakfast to the room. arya wants a yummy breakfast, eggs, avocado, steak if possible, toast, fruit and latte and water.',
-                section: 'getting-ready'
-            },
-            {
-                time: '10:00 AM',
+                time: '11:00 AM',
                 event: 'photographers arrive',
                 location: 'the luxury collection manhattan midtown',
                 vendor: 'rafaella',
-                notes: 'coordinate arrival of both photographers and make sure they are aware of the room numbers of bride and groom',
+                phone: '+51951792901',
+                notes: 'grab vendor and bring them up. use whatsapp.',
                 section: 'getting-ready'
             },
             {
                 time: '12:00 PM',
-                event: 'bride and groom alone time',
-                notes: 'ensure bride and groom each have 5-10 minutes ALONE in their rooms. designate a person to manage this and inform them of driver arrival times.',
+                event: 'maria\'s family/friends arrive - mom, mil, valeria, alejandra, gabriella, hania',
+                location: 'the luxury collection manhattan midtown',
+                notes: 'grab group and bring them up - not urgent',
+                section: 'getting-ready'
+            },
+            {
+                time: '12:00 PM',
+                event: 'makeup touch ups',
+                location: 'the luxury collection manhattan midtown',
+                vendor: 'elena',
+                section: 'getting-ready'
+            },
+            {
+                time: '12:10 PM',
+                event: 'lana helps arya pack up',
+                location: 'arya\'s hotel room - 4009',
+                notes: 'collect: 1. 2 coolers - waters & sodas need ice (for ceremony and buses) - send with arya in suvs to ceremony. 2. 50 fans (ceremony) - give to kenya at the ceremony. 3. bubble machines (ceremony) - give to kenya at the ceremony',
                 section: 'getting-ready',
                 important: true
             },
             {
                 time: '12:30 PM',
-                event: 'grooms driver will arrive at the hotel (photographer #2 with him)',
-                notes: 'confirm time of arrival and confirm they arrive on time',
+                event: 'arya and lana depart to the ceremony',
+                location: 'the luxury collection manhattan midtown',
+                vendor: 'joe - driver',
+                notes: 'leaves with guys he\'s getting ready with & photographer #2. ~16 minute transit',
                 section: 'ceremony'
             },
             {
                 time: '12:30 PM',
-                event: 'guests arrive at bethesda fountain',
+                event: 'maria\'s moms & friends depart to ceremony',
+                location: 'the luxury collection manhattan midtown',
+                vendor: 'joe - driver',
+                notes: 'mariana (maria\'s cousin) will kindly ask them to head out. give maria\'s mom, maria\'s reception dress',
+                section: 'ceremony'
+            },
+            {
+                time: '12:45 PM',
+                event: 'guitarist starts music',
+                location: 'bethesda fountain - under the arches',
+                vendor: 'carlos - guitarist',
+                notes: 'ensure the music starts on time, carlos knows where to set up',
+                section: 'ceremony'
+            },
+            {
+                time: '12:45 PM',
+                event: 'security arrives at ceremony',
                 location: 'bethesda fountain under the arches',
-                notes: 'ensure the parents and family of both parties stay close and have a good position. be aware of the people that will need a chair and let the security team know so they can give them one.',
+                vendor: 'anthony',
+                notes: 'security is responsible to keep ceremony safe',
+                section: 'ceremony'
+            },
+            {
+                time: '12:50 PM',
+                event: 'arya and grooms party arrive',
+                location: 'bethesda fountain',
+                notes: 'stay with arya and make sure he stays in place. give kenya fans and bubbles. oversee that the photographer & videographer are in place.',
                 section: 'ceremony',
                 important: true
             },
             {
-                time: '12:45 PM',
-                event: 'designated musician will start playing the selected songs',
-                location: 'bethesda fountain under the arches',
-                vendor: 'carlos',
-                notes: 'confirm time of arrival and confirm they arrive on time',
+                time: '1:00 PM',
+                event: 'kenya hands out bubbles and fans to guests',
+                location: 'bethesda fountain',
+                vendor: 'kenya',
+                notes: 'kenya will have maria\'s friends help distribute',
                 section: 'ceremony'
             },
-            {
-                time: '12:45 PM',
-                event: 'security team arrives at ceremony location',
-                location: 'bethesda fountain under the arches',
-                notes: 'place them where it would be best to maintain space for when maria walks down the aisle. the security team will help with some chairs for the family members that need to be seated (faye, esther)',
+             {
+                time: '1:00 PM - 1:30 PM',
+                event: 'guests arrive at ceremony',
+                location: 'bethesda fountain',
+                notes: 'arya and friends responsible for both sides of family to have a good view',
                 section: 'ceremony'
             },
             {
                 time: '1:00 PM',
-                event: "bride's driver arrives at the hotel (photographer #1 with her)",
-                notes: 'confirm time of arrival and confirm they arrive on time',
-                section: 'ceremony'
-            },
-            {
-                time: '1:00 PM',
-                event: 'arya and grooms party arrive',
-                location: 'bethesda fountain under the arches',
-                vendor: 'mikey',
-                notes: 'guide arya and make sure he stays in place lol',
-                section: 'ceremony'
-            },
-            {
-                time: '1:00 PM',
-                event: "maria's dad and little brother are pulled to the side to have first look with maria",
-                vendor: 'jose and diego',
-                phone: '3214603129',
-                phone2: '3865611318',
-                notes: 'bring jose and diego to the location',
-                section: 'ceremony'
-            },
-            {
-                time: '1:15 PM',
-                event: 'maria and party arrive at central park',
-                location: '5th av & e 72 st',
-                vendor: 'cassidy and alexia',
-                phone: '8185734478',
-                phone2: '9256281750',
-                notes: 'bridal party will go to the bethesda fountain and allison and mariana will stay with maria to go with her for her 1st look w her dad.',
+                event: 'maria departs to the ceremony',
+                location: 'the luxury collection manhattan midtown',
+                vendor: 'joe - driver',
+                notes: 'photographer #1 - alexia, mariana, cassidy (friends). ~16 minute transit',
                 section: 'ceremony'
             },
             {
                 time: '1:20 PM',
-                event: "maria's first look with her dad",
-                vendor: 'allison and mariana',
-                phone: '4072573542',
-                phone2: '5034709827',
-                notes: 'turn my dad so i can be in the place i need to be. allison and mariana will help me with my veil, walking, and bouquet.',
+                event: 'first look - maria\'s dad (jose)',
+                location: 'entrance of central park (5th & 72nd)',
+                vendor: 'jose (dad)',
+                phone: '3214603129',
+                notes: 'mariana and photographer #1 will get out first to find a spot. maria will follow once dad is placed and photographer ready. lana stay at ceremony site.',
+                section: 'ceremony',
+                important: true
+            },
+            {
+                time: '1:20 PM',
+                event: 'maria and party arrive at ceremony',
+                location: 'entrance of central park (5th & 72nd)',
+                vendor: 'alexia (maid of honor)',
+                phone: '9256281750',
+                notes: 'alexia will text you when the bride arrives',
                 section: 'ceremony'
             },
             {
+                time: '1:25 PM',
+                event: 'alexia (maid of honor) and cassidy (friend) go to the fountain',
+                location: 'bethesda fountain',
+                vendor: 'alexia (maid of honor)',
+                phone: '9256281750',
+                notes: 'connect with alexia & cassidy (maid of honor/friend) and make sure everything is set to place',
+                section: 'ceremony',
+                important: true
+            },
+            {
                 time: '1:35 PM',
-                event: 'maria and dad and diego walk toward the fountain',
-                notes: "make sure everyone is in position to start the ceremony. make sure the musician is playing the song (can't help falling in love - kina grannis) https://www.youtube.com/watch?v=GR6L_C0Ii6s maria will be coming down the stairs with her dad",
+                event: 'maria and dad (jose) - start walking to ceremony',
+                location: 'entrance of central park (5th & 72nd) to bethesda fountain',
+                vendor: 'mariana (cousin)',
+                phone: '5034709827',
+                notes: 'maria will be coming down the stairs with her dad',
                 section: 'ceremony',
                 important: true
             },
             {
                 time: '1:40 PM',
-                event: 'mikey starts doing the ordained speech & ceremony',
-                notes: 'oversee that the photographer has a good area to have amazing pictures.',
+                event: 'ceremony begins',
+                location: 'bethesda fountain',
+                vendor: 'mikey',
+                phone: '4243470900',
+                notes: 'oversee that the photographer has a good area to have amazing pictures. mikey starts doing the ordained speech & ceremony',
                 section: 'ceremony',
                 important: true
             },
             {
                 time: '2:00 PM',
-                event: 'couple walks off and the immediate family gathers for a family picture. other guests will go to the meeting point for the buses',
-                notes: 'check to make sure the buses have arrived and parked. give some lucky guests the fans (i messed up and only bought 50) geo will have two coolers with drinks.',
+                event: 'ceremony ends',
+                location: 'bethesda fountain',
+                notes: 'kenya will gather bubble machines. direct guests to the bus, ensure bus arrives, and the bride & groom take pics. bring coolers to buses - anthony (security)',
                 section: 'ceremony'
             },
             {
-                time: '2:30 PM',
-                event: 'bus tour starts',
-                notes: 'lana heads back to moxy williamsburg in cab and calls joes pizza at times square',
+                time: '2:00 PM - 2:30 PM',
+                event: 'family portraits',
+                location: 'central park - photographer decision',
+                vendor: '#1 rafella, #2 daniella',
+                notes: 'photographer has shot list',
+                section: 'ceremony'
+            },
+            {
+                time: '2:40 PM',
+                event: 'bus departs',
+                location: 'entrance of central park (5th & 72nd)',
+                vendor: 'joe - driver',
+                notes: 'ensure coolers made it on board',
                 section: 'reception'
             },
             {
-                time: '3:00 PM',
-                event: 'stop at joe\'s pizza in times square',
-                location: 'joe\'s pizza at times square',
-                notes: 'confirm that the pizzas will be ready for pickup. we think we need 20 pizzas. 10 fresh mozz. 10 pepperoni',
-                section: 'reception'
-            },
-            {
-                time: '4:15 PM',
-                event: 'arrival to the reception',
-                location: 'lilistar at the moxy williamsburg rooftop',
-                notes: 'tables set up, sofreh set up, souvenir table set up. pastries table? not sure if we should do this before or after dinner. free-flowing champagne. when the bride and groom arrive, they will go to domino park with a photographer to take a few pictures while the guests are finding their seats and enjoying cocktails.',
+                time: '2:40 PM',
+                event: 'lana departs to reception',
+                location: 'entrance of central park (5th & 72nd) to moxy',
+                notes: 'transit - please call an uber and we will reimburse you. ~30 minute transit',
                 section: 'reception',
                 important: true
+            },
+            {
+                time: '3:10 PM',
+                event: 'lana arrives at moxy',
+                location: 'moxy williamsburg',
+                vendor: 'chelsea',
+                phone: '9012991133',
+                notes: 'set up list: dinner tables, favor table, sofreh table, pastries table, cake table, seating chart, welcome table, gift table',
+                section: 'reception',
+                important: true
+            },
+            {
+                time: '3:15 PM',
+                event: 'stop at joe\'s in times square',
+                location: 'joe\'s at time square',
+                vendor: 'ashley coordinating with joe\'s',
+                notes: 'na - just picking it up. no one is getting off the bus.',
+                section: 'reception'
+            },
+            {
+                time: '4:15 PM - 4:30 PM',
+                event: 'everyone arrives to the reception',
+                location: 'lilistar at the moxy williamsburg rooftop',
+                section: 'reception'
+            },
+            {
+                time: '4:45 PM',
+                event: 'guests find seats',
+                location: 'lilistar at the moxy williamsburg rooftop',
+                vendor: 'talon',
+                notes: 'talon will make announcement',
+                section: 'reception'
             },
             {
                 time: '4:50 PM',
-                event: 'maria and arya walk in and go directly to the sofreh table',
+                event: 'maria and arya entrance',
                 location: 'lilistar at the moxy williamsburg rooftop',
-                notes: 'make sure the dj is djing and that their song plays when they walk in! we still need to pick up an entrance song',
+                notes: 'maria and arya go directly to the sofreh table',
                 section: 'reception',
                 important: true
             },
             {
-                time: '5:30 PM',
-                event: 'arya and maria go to their seat and dinner starts',
+                time: '4:50 PM - 5:10 PM',
+                event: 'sofreh ceremony',
+                location: 'sofreh table',
+                notes: 'family running ceremony',
+                section: 'reception'
+            },
+            {
+                time: '5:30 PM - 7:00 PM',
+                event: 'dinner',
                 location: 'lilistar at the moxy williamsburg rooftop',
                 notes: 'oversee that everything is going smooth',
                 section: 'reception'
             },
             {
-                time: '6:00 PM',
-                event: '1st toast',
+                time: '7:00 PM - 7:30 PM',
+                event: 'toasts',
                 location: 'lilistar at the moxy williamsburg rooftop',
+                vendor: 'talon',
+                notes: 'talon to announce names. toasts: 1. maria\'s dad, 2. alexia, 3. arya\'s friend - tbd, 4. allison',
                 section: 'reception'
             },
             {
-                time: '6:30 PM',
-                event: 'second course',
-                location: 'lilistar at the moxy williamsburg rooftop',
-                section: 'reception'
-            },
-            {
-                time: '6:45 PM',
-                event: '2nd toast (two people)',
-                location: 'lilistar at the moxy williamsburg rooftop',
-                section: 'reception'
-            },
-            {
-                time: '7:00 PM',
-                event: 'entrees drop',
-                location: 'lilistar at the moxy williamsburg rooftop',
-                section: 'reception'
-            },
-            {
-                time: '7:30 PM',
-                event: 'dinner ends',
-                location: 'lilistar at the moxy williamsburg rooftop',
-                section: 'reception'
-            },
-            {
-                time: '7:30 PM',
-                event: 'dancing starts',
-                location: 'lilistar at the moxy williamsburg rooftop',
-                notes: 'dessert will be served during dancing',
+                time: '7:30 PM - 10:00 PM',
+                event: 'dancing',
+                location: 'dance floor',
+                vendor: 'talon',
+                notes: 'talon to announce order of formal dances: first dance - bride & groom, father daughter dance, mother son dance',
                 section: 'reception'
             },
             {
                 time: '9:00 PM',
                 event: 'cake cutting',
+                location: 'cake table',
                 notes: 'make sure the cake is being brought out and make sure the tea and coffee table is set. pastries',
                 section: 'reception',
                 important: true
             },
             {
                 time: '9:20 PM',
-                event: 'pass items for "hora loca"',
-                notes: 'everything will be in a box ready to go. please pass it along',
+                event: '"hora loca"',
+                location: 'dance floor',
+                vendor: 'lana & talon',
+                notes: 'box of hora loca items at moxy - pass out to everyone on the dance floor. talon to announce',
                 section: 'reception'
             },
             {
                 time: '10:00 PM',
                 event: 'goodbye for the bride and the groom!',
-                notes: 'couple will go somewhere to have a few alone moments and end the night!',
+                location: 'lilistar at the moxy williamsburg rooftop',
+                notes: 'no exit - just doing a final dance',
                 section: 'reception',
                 important: true
             }
@@ -448,66 +596,108 @@
 
         const vendorData = [
             {
-                name: 'stevie ray huffman',
-                role: 'hair stylist',
-                phone: '3233467206'
+                name: 'lana',
+                role: 'coordinator',
+                phone: '3477388058'
             },
             {
-                name: 'elena nheme',
+                name: 'ashley',
+                role: 'arya\'s assistant',
+                phone: '5123180470',
+                notes: 'handling joe\'s pizza'
+            },
+            {
+                name: 'rafella',
+                role: 'photographer #1',
+                phone: '+51951792901'
+            },
+            {
+                name: 'daniella',
+                role: 'photographer #2',
+                phone: '+51991833043'
+            },
+            {
+                name: 'juan camilo',
+                role: 'videographer',
+                phone: '+573012013526'
+            },
+            {
+                name: 'chelsea',
+                role: 'moxy contact',
+                phone: '9012991133'
+            },
+            {
+                name: 'carlos',
+                role: 'guitarist',
+                phone: '9292568884'
+            },
+            {
+                name: 'elena',
                 role: 'makeup artist',
                 phone: '7543024071'
             },
             {
-                name: 'carlos',
-                role: 'musician',
-                phone: 'TBD'
+                name: 'stevie',
+                role: 'hair stylist',
+                phone: '3233467206'
             },
             {
-                name: 'lana',
-                role: 'day-of coordinator',
-                phone: '3477388058'
+                name: 'talon',
+                role: 'dj',
+                phone: '6145996971'
             },
             {
-                name: 'rafaella',
-                role: 'photographer',
-                phone: 'TBD'
+                name: 'faye',
+                role: 'florist (arya\'s mom)',
+                phone: '3212761414',
+                notes: 'bride\'s family'
+            },
+            {
+                name: 'kenya',
+                role: 'hands out bubbles & fans',
+                phone: '4077911742'
+            },
+            {
+                name: 'alexia',
+                role: 'maid of honor',
+                phone: '9256281750'
+            },
+            {
+                name: 'cassidy',
+                role: 'maria\'s friend',
+                phone: '8185734478'
             },
             {
                 name: 'mikey',
-                role: 'officiant',
-                phone: 'TBD'
-            }
-        ];
-
-        const questionData = [
-            {
-                question: "What kind of bar service? Cash, hosted full service, partial hosted/cash? A sign at bar can help with guest expectations",
-                context: "Regarding \"Arya and Maria go to their seat and Dinner starts\""
+                role: 'officiant/best man',
+                phone: '4243470900'
             },
             {
-                question: "Who's bringing the rings?!",
-                context: "Regarding bride kit and other items to be in the room"
+                name: 'joe',
+                role: 'driver',
+                phone: '9179160424',
+                notes: '2 hours, 3 suvs'
             },
             {
-                question: "Have all vendors been paid or will you need me to coordinate any payments on day of?",
-                context: "General vendor question"
+                name: 'anthony',
+                role: 'security',
+                phone: '3473856476'
             },
             {
-                question: "Assuming this order has already been placed! Please confirm",
-                context: "Regarding pizza order for 20 pizzas (10 fresh mozz, 10 pepperoni)"
+                name: 'allison',
+                role: 'maria\'s friend',
+                phone: '4072573542',
+                notes: 'handling breakfast'
             },
             {
-                question: "Will all of this already be at the venue or will I bring any of this from hotel?",
-                context: "Regarding tables setup, Sofreh setup, Souvenir table setup, and Pastries table"
+                name: 'jose',
+                role: 'maria\'s dad',
+                phone: '3214603129'
             },
             {
-                question: "Who is bringing the box?",
-                context: "Regarding \"Hora Loca\" items"
-            },
-            {
-                question: "I think confetti is banned in Central Park - we might get fined (unless you got go ahead!)",
-                context: "Regarding passing out confetti",
-                followUp: "If not, real petals might be a nice alternative"
+                name: 'mariana',
+                role: 'maria\'s cousin',
+                phone: '5034709827'
             }
         ];
 
@@ -523,7 +713,6 @@
                     ${item.location ? `<p><strong>location:</strong> ${item.location}</p>` : ''}
                     ${item.vendor ? `<p><strong>vendor:</strong> ${item.vendor}</p>` : ''}
                     ${item.phone ? `<p><strong>phone:</strong> <a href="tel:${item.phone}">${item.phone}</a></p>` : ''}
-                    ${item.phone2 ? `<p><strong>phone 2:</strong> <a href="tel:${item.phone2}">${item.phone2}</a></p>` : ''}
                     ${item.notes ? `<div class="coordinator-notes ${item.important ? 'important' : ''}"><strong>coordinator notes:</strong> ${item.notes}</div>` : ''}
                 </div>
             `;
@@ -537,19 +726,9 @@
                 <h3>${vendor.name}</h3>
                 <p><strong>role:</strong> ${vendor.role}</p>
                 <p><strong>phone:</strong> <a href="tel:${vendor.phone}">${vendor.phone}</a></p>
+                ${vendor.notes ? `<p><strong>notes:</strong> ${vendor.notes}</p>` : ''}
             `;
             return vendorCard;
-        }
-
-        function createQuestionCard(question) {
-            const questionCard = document.createElement('div');
-            questionCard.className = 'question';
-            questionCard.innerHTML = `
-                <p><strong>Question:</strong> ${question.question}</p>
-                <p><strong>Context:</strong> ${question.context}</p>
-                ${question.followUp ? `<p><strong>Follow-up:</strong> ${question.followUp}</p>` : ''}
-            `;
-            return questionCard;
         }
 
         function renderTimeline() {
@@ -559,6 +738,13 @@
 
             timelineData.forEach((item, index) => {
                 if (item.section !== currentSection) {
+                    if (currentSection === 'getting-ready') {
+                        const quoteDiv = document.createElement('div');
+                        quoteDiv.className = 'quote';
+                        quoteDiv.innerHTML = '"those who dance are considered insane by those who cannot hear the music." —friedrich nietzsche';
+                        timeline.appendChild(quoteDiv);
+                    }
+                    
                     currentSection = item.section;
                     sectionDiv = document.createElement('div');
                     sectionDiv.className = 'timeline-section';
@@ -568,19 +754,55 @@
                 }
                 sectionDiv.appendChild(createTimelineItem(item, index));
             });
+
+            // Add Sofreh Table information after the ceremony section
+            const ceremonySection = document.getElementById('ceremony');
+            if (ceremonySection) {
+                const sofrehInfo = document.createElement('div');
+                sofrehInfo.className = 'timeline-item';
+                sofrehInfo.innerHTML = `
+                    <h3>sofreh aghd table</h3>
+                    <p>the sofreh aghd is a traditional persian wedding spread rich in symbolism, representing a sacred space for the union to take place.</p>
+                    <div class="image-container">
+                        <img src="what goes on sofreh table.pdf" alt="Sofreh Aghd Table Items">
+                    </div>
+                    <ul>
+                        <li>a mirror represents reflection and the couple's bright future together</li>
+                        <li>candles symbolize energy and clarity</li>
+                        <li>fruits for health and a joyous future</li>
+                        <li>nuts to symbolize fruitfulness and abundance</li>
+                        <li>a sacred book for blessings</li>
+                        <li>esphand or wild rue for spiritual protection</li>
+                        <li>bread and wheat for abundance and prosperity</li>
+                        <li>sweet pastries for a sweet life together</li>
+                        <li>rose water to perfume the air</li>
+                        <li>honey represents the sweetness of life</li>
+                        <li>sugar cones to shower the couple with sweetness</li>
+                    </ul>
+                `;
+                ceremonySection.appendChild(sofrehInfo);
+            }
+
+            // Add floral arrangement image after the reception section
+            const receptionSection = document.getElementById('reception');
+            if (receptionSection) {
+                const floralInfo = document.createElement('div');
+                floralInfo.className = 'timeline-item';
+                floralInfo.innerHTML = `
+                    <h3>floral arrangements</h3>
+                    <div class="image-container">
+                        <img src="floral on table.jpg" alt="Floral Arrangements">
+                    </div>
+                    <p>ensure the floral arrangements are set up according to this image.</p>
+                `;
+receptionSection.appendChild(floralInfo);
+            }
         }
 
         function renderVendors() {
             const vendorsSection = document.getElementById('vendors');
             vendorData.forEach(vendor => {
                 vendorsSection.appendChild(createVendorCard(vendor));
-            });
-        }
-
-        function renderQuestions() {
-            const questionsSection = document.getElementById('questions');
-            questionData.forEach(question => {
-                questionsSection.appendChild(createQuestionCard(question));
             });
         }
 
@@ -616,7 +838,7 @@
             const currentTime = now.getHours() * 60 + now.getMinutes();
 
             timelineData.forEach((item, index) => {
-                const [hours, minutes] = item.time.split(':').map(Number);
+                const [hours, minutes] = item.time.split(':')[0].split(' ')[0].split(':').map(Number);
                 const itemTime = hours * 60 + minutes;
                 const timelineItem = document.querySelectorAll('.timeline-item')[index];
 
@@ -639,7 +861,6 @@
 
         renderTimeline();
         renderVendors();
-        renderQuestions();
         loadCheckboxState();
         updatePastEvents();
 
