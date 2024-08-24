@@ -505,6 +505,7 @@
                 vendor: 'chelsea',
                 phone: '9012991133',
                 notes: 'set up list: dinner tables, favor table, sofreh table, pastries table, cake table, seating chart, welcome table, gift table',
+                image: 'floral on table.jpg',
                 section: 'reception',
                 important: true
             },
@@ -714,10 +715,14 @@
                     ${item.vendor ? `<p><strong>vendor:</strong> ${item.vendor}</p>` : ''}
                     ${item.phone ? `<p><strong>phone:</strong> <a href="tel:${item.phone}">${item.phone}</a></p>` : ''}
                     ${item.notes ? `<div class="coordinator-notes ${item.important ? 'important' : ''}"><strong>coordinator notes:</strong> ${item.notes}</div>` : ''}
+                    ${item.image ? `
+                        <div class="image-container">
+                            <img src="${item.image}" alt="Floral Arrangements">
+                        </div>
+                    ` : ''}
                 </div>
             `;
             return timelineItem;
-        }
 
         function createVendorCard(vendor) {
             const vendorCard = document.createElement('div');
